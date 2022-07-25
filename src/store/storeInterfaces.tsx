@@ -16,7 +16,7 @@ export interface StateSet {
 
 export interface StateLabirint {
     labirintMap: Array<Array<string>>;
-	trajectory: Array<Moves>;
+	trajectory: Array<string>;
 }
 
 
@@ -37,7 +37,7 @@ export interface ActionSet {
 }
 export interface ActionLabirint {
 	type: string;
-	payload: StateSet;
+	payload: StateLabirint;
 }
 
 
@@ -54,7 +54,7 @@ export interface PropsStateLabirint {
 	labirintMap: Array<Array<string>>;
 }
 export interface PropsStateTrajectory {
-	trajectory: Array<Moves>;
+	trajectory: Array<string>;
 }
 
 

@@ -12,7 +12,7 @@ const initialState: I.StateAll = {
 	},
 	labirint: {
 		labirintMap: [['']],
-		trajectory: [I.Moves.up],
+		trajectory: [''],
 	}
 };
 

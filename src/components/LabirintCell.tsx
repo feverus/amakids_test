@@ -12,5 +12,5 @@ function LabirintCell_i(props:P) {
     );
 }
 
-const LabirintCell = connect(mapDispatchToProps)(LabirintCell_i);
+const LabirintCell = connect(null, mapDispatchToProps)(LabirintCell_i);
 export default LabirintCell;
