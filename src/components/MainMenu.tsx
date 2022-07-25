@@ -23,7 +23,6 @@ function MainMenu_i(props:P) {
         let newGameData = generateTrajectory({movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: [r(x), r(y)]});
         props.doStartGame({page:'game', movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: newGameData.labirintEnter, labirintExit: newGameData.labirintExit, gamesPlayed: 0, gamesWinned: 0});      
         props.generateNewGame({labirintMap:newGameData.labirintMap, trajectory:newGameData.trajectory}) 
-
     }
 
 

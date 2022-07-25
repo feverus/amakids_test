@@ -47,5 +47,6 @@ export default function generateTrajectory(props:P):R {
             default: break;
         }
     }
+    labirintMap[endCell[0]-1][endCell[1]-1] = 'enter'
     return {labirintMap: labirintMap, trajectory: trajectory, labirintEnter: props.labirintEnter, labirintExit: endCell}
 }

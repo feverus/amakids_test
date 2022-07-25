@@ -6,3 +6,9 @@ export function startGame(value: I.StateSet):I.ActionSet {
 		payload: value
 	}
 }
+export function onCellClick(value: I.StateSet):I.ActionSet {
+	return {
+		type: "ON_CELL_CLICK",
+		payload: value
+	}
+}
