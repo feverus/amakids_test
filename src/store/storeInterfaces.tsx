@@ -62,4 +62,5 @@ export interface PropsStateTrajectory {
 
 export interface PropsDispaich {
 	doStartGame: Function; 
+	generateNewGame: Function; 
 }

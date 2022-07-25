@@ -17,15 +17,16 @@ function MainMenu_i(props:P) {
         }
         if (level === 'simple') {
             movesOnTrajectory = 2
-            x = 1
-            y = 1
+            x = 2
+            y = 2
         }
+        let newGameData = generateTrajectory({movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: [r(x), r(y)]});
+        props.doStartGame({page:'game', movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: newGameData.labirintEnter, labirintExit: newGameData.labirintExit, gamesPlayed: 0, gamesWinned: 0});      
+        props.generateNewGame({labirintMap:newGameData.labirintMap, trajectory:newGameData.trajectory}) 
 
-        props.doStartGame({page:'game', movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: [r(x), r(y)], labirintExit: [1, 1], gamesPlayed: 0, gamesWinned: 0});        
     }
 
-    let a = generateTrajectory({movesOnTrajectory: 10, labirintSize: [3, 3], labirintEnter: [3, 3]})
-    console.log(a)
+
 
     return (
         <>

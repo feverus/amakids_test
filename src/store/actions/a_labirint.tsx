@@ -1,8 +1,8 @@
 import * as I from '../storeInterfaces';
 
-export function onChangePage(value: I.StateSet):I.ActionSet {
+export function generateNewGame(value: I.StateSet):I.ActionSet {
 	return {
-		type: "ON_CHANGE_PAGE",
+		type: "GENERATE_NEW_GAME",
 		payload: value
 	}
 }
