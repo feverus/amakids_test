@@ -1,25 +1,22 @@
 // типы данных для хранилища
 
 
-export interface LabirintCell {
-    X: number;
-    Y: number;
-}
+
 export enum Moves { 'up', 'right', 'down', 'left' }
 
 export interface StateSet {
 	page: string;
 	movesOnTrajectory: number;
-	labirintSize: LabirintCell;
-	labirintEnter: LabirintCell;
-	labirintExit: LabirintCell;
+	labirintSize: Array<number>;
+	labirintEnter: Array<number>;
+	labirintExit: Array<number>;
 	gamesPlayed: number;
 	gamesWinned: number;
 }
 
 export interface StateLabirint {
-    map: Array<Array<string>>;
-	Trajectory: Array<Moves>;
+    labirintMap: Array<Array<string>>;
+	trajectory: Array<Moves>;
 }
 
 
@@ -49,11 +46,20 @@ export interface ActionLabirint {
 export interface PropsStateMain {
 	page: string;
 }
-
+export interface PropsStateHeader {
+	gamesPlayed: number;
+	gamesWinned: number;
+}
+export interface PropsStateLabirint {
+	labirintMap: Array<Array<string>>;
+}
+export interface PropsStateTrajectory {
+	trajectory: Array<Moves>;
+}
 
 
 //функции для mapDispatchToProps
 
 export interface PropsDispaich {
-	onChangePage: Function; 
+	doStartGame: Function; 
 }
