@@ -1,9 +1,9 @@
 import * as I from './storeInterfaces';
 
-export function mapStateToPropsSample() {
-	return function (state: I.StateAll):I.PropsStateSample {
+export function mapStateToPropsMain() {
+	return function (state: I.StateAll):I.PropsStateMain {
 		return {
-			sample: state.set.sample,
+			page: state.set.page,
 		}
 	}
 }

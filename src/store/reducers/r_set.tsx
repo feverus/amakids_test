@@ -5,7 +5,7 @@ export default function r_set(state: I.StateSet = initialState.set, action: I.Ac
 	switch(action.type) {
 		case "ON_CHANGE_SAMPLE": {
 			return {...state,
-				sample: action.payload.sample
+				page: action.payload.page
 			}        
 		} 
 		default: return state;
