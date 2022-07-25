@@ -6,6 +6,8 @@ export enum Moves { 'up', 'right', 'down', 'left' }
 
 export interface StateSet {
 	page: string;
+	endGame: boolean;
+	win: boolean;
 	movesOnTrajectory: number;
 	labirintSize: Array<number>;
 	labirintEnter: Array<number>;
@@ -45,6 +47,8 @@ export interface ActionLabirint {
 
 export interface PropsStateMain {
 	page: string;
+	endGame: boolean;
+	win: boolean;
 }
 export interface PropsStateHeader {
 	gamesPlayed: number;
@@ -53,8 +57,17 @@ export interface PropsStateHeader {
 export interface PropsStateLabirint {
 	labirintMap: Array<Array<string>>;
 }
+export interface PropsStateLabirintCell {
+	labirintExit: Array<number>;
+}
 export interface PropsStateTrajectory {
 	trajectory: Array<string>;
+}
+export interface PropsStateEndGame {
+	movesOnTrajectory: number;
+	labirintSize: Array<number>;
+	gamesPlayed: number;
+	gamesWinned: number;
 }
 
 

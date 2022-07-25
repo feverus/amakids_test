@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
 import * as I from '../store/storeInterfaces';
+import {mapStateToPropsLabirintCell as mapStateToProps} from '../store/mapStateToProps';
 import {mapDispatchToProps} from '../store/mapDispatchToProps';
 
-type P = I.PropsDispaich & {cell:Array<number>, value:string};
+type P = I.PropsStateLabirintCell &I.PropsDispaich & {cell:Array<number>, value:string};
 
 function LabirintCell_i(props:P) {
-    console.log(props)
+    const handleClick = () => {
+        console.log(props.cell);
+        console.log(props.labirintExit);
+        ((props.cell[0]===props.labirintExit[0]) && (props.cell[1]===props.labirintExit[1])) ? props.onCellClick({win:true}) : props.onCellClick({win:false});
+    }
     return (
         <div>
-        <button onChange={() => props.onCellClick(props.cell)} >{props.value}</button>
+            <button onClick={() => {handleClick()}} >{props.cell}{props.value}</button>
         </div>
     );
 }
 
-const LabirintCell = connect(null, mapDispatchToProps)(LabirintCell_i);
+const LabirintCell = connect(mapStateToProps, mapDispatchToProps)(LabirintCell_i);
 export default LabirintCell;

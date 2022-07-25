@@ -14,7 +14,7 @@ function Labirint_i(props:P) {
             <div key={y}>    
                 <>         
                 {row.map((cell, x) => 
-                    <LabirintCell cell = {[x, y]} value = {cell}  key={x+'-'+y} />
+                    <LabirintCell cell = {[x+1, y+1]} value = {cell}  key={x+'-'+y} />
                 )}
                 </> 
             </div>

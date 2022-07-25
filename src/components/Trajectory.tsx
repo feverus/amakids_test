@@ -9,7 +9,7 @@ type P = I.PropsStateTrajectory & I.PropsDispaich;
 function Trajectory_i(props:P) {
     return (
         <>
-        {props.trajectory.map((move) => <TrajectoryStep direction = {move} />)}
+        {props.trajectory.map((move, id) => <TrajectoryStep direction = {move} key={id} />)}
         </>
     );
 }

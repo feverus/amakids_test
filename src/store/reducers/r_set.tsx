@@ -7,6 +7,11 @@ export default function r_set(state: I.StateSet = initialState.set, action: I.Ac
 			return {...action.payload
 			}        
 		} 
+		case "ON_CELL_CLICK": {
+			let gamesWinned = state.gamesWinned
+			if (action.payload.win) gamesWinned++
+			return {...state, win:action.payload.win, endGame: true, gamesPlayed:state.gamesPlayed+1, gamesWinned:gamesWinned}        
+		} 
 		default: return state;
 	}
 }

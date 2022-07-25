@@ -6,6 +6,7 @@ import MainMenu from './MainMenu';
 import Header from './Header';
 import Labirint from './Labirint';
 import Trajectory from './Trajectory';
+import EndGame from './EndGame';
 
 type P = I.PropsStateMain & I.PropsDispaich;
 
@@ -22,6 +23,7 @@ function Main_i(props:P) {
                     <Header/>
                     <Labirint/>
                     <Trajectory/>
+                    <EndGame opened={props.endGame} win={props.win} />
                 </>
             );
             break;

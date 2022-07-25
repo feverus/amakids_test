@@ -3,6 +3,8 @@ import * as I from './storeInterfaces';
 const initialState: I.StateAll = {
 	set: {
 		page: 'start',
+		endGame: false,
+		win: false,
 		movesOnTrajectory: 10,
 		labirintSize: [1, 1],
 		labirintEnter: [1, 1],
