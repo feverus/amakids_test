@@ -4,6 +4,7 @@ import {mapStateToPropsEndGame as mapStateToProps} from '../store/mapStateToProp
 import {mapDispatchToProps} from '../store/mapDispatchToProps';
 import r from '../function/randomInt'
 import generateTrajectory from '../function/generateTrajectory'
+import S from '../styles/endGame.module.css'
 
 type P = I.PropsStateEndGame & I.PropsDispaich & {opened:boolean, win:boolean};
 

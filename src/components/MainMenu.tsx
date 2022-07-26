@@ -3,6 +3,8 @@ import * as I from '../store/storeInterfaces';
 import {mapDispatchToProps} from '../store/mapDispatchToProps';
 import r from '../function/randomInt'
 import generateTrajectory from '../function/generateTrajectory'
+import S from '../styles/mainMenu.module.css'
+
 type P = I.PropsDispaich;
 
 function MainMenu_i(props:P) {
@@ -26,15 +28,13 @@ function MainMenu_i(props:P) {
     }
 
 
-
     return (
-        <>
-        Выбрать сложность:
-        <button onClick={() => chooseLevel('simple')}>Легкая</button>
-        <button onClick={() => chooseLevel('normal')}>Нормальная</button>
-        <button onClick={() => chooseLevel('hard')}>Сложная</button>
-        
-        </>
+        <div className={S.buttonBlock}>
+            Выбрать сложность:
+            <button className = {S.button} onClick={() => chooseLevel('simple')}>Легкая</button>
+            <button className = {S.button} onClick={() => chooseLevel('normal')}>Нормальная</button>
+            <button className = {S.button} onClick={() => chooseLevel('hard')}>Сложная</button>            
+        </div>
     );
 }
 

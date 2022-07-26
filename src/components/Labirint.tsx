@@ -3,6 +3,7 @@ import * as I from '../store/storeInterfaces';
 import {mapStateToPropsLabirint as mapStateToProps} from '../store/mapStateToProps';
 import {mapDispatchToProps} from '../store/mapDispatchToProps';
 import LabirintCell from './LabirintCell';
+import S from '../styles/labirint.module.css'
 
 type P = I.PropsStateLabirint & I.PropsDispaich;
 
@@ -11,7 +12,7 @@ function Labirint_i(props:P) {
     return (
         <>
         {props.labirintMap.map((row, y) => 
-            <div key={y}>    
+            <div className={S.row} key={y}>    
                 <>         
                 {row.map((cell, x) => 
                     <LabirintCell cell = {[x+1, y+1]} value = {cell}  key={x+'-'+y} />

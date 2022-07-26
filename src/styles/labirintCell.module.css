@@ -1,0 +1,38 @@
+.cell {
+    width: 100px;
+    height: 100px;  
+    margin: 5px;  
+}
+.cell button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    color: white;
+    background-size: cover;
+    border: none;
+    padding: 0;
+}
+.hall {
+    background-image: url('img/hall.jpg');    
+}
+
+
+.enter {  
+}
+.enter::before {
+    display: inline-block;
+    content: "";
+    background-image: url('img/door.jpg'); 
+    position: relative;
+    background-size: cover;
+    width: 100px;
+    height: 100px;  
+    opacity: 0;
+    animation: opacity 2s forwards;
+}
+
+
+@keyframes opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

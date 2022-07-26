@@ -1,0 +1,7 @@
+.steps {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+    justify-content: center;   
+}

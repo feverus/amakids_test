@@ -1,0 +1,42 @@
+.block {
+    width: 50px;
+    height: 50px; 
+    margin: 5px;   
+}
+.text {
+    width: 10px;
+    height: 10px;  
+}
+
+.left {
+    transform: rotate(180deg);
+}
+.right {
+
+}
+.up {
+    transform: rotate(-90deg);
+}
+.down {
+    transform: rotate(90deg);
+}
+
+.left, .right, .up, .down {
+    background-image: url('img/arrow.png');
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-size: cover;
+    border: none;
+    padding: 0;   
+    opacity: 0;
+    animation: opacity 0.75s forwards;
+    margin: -5px 5px 5px 0px;
+    transition: all 0.2s easy 0s;
+}
+
+
+@keyframes opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

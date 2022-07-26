@@ -7,6 +7,7 @@ import Header from './Header';
 import Labirint from './Labirint';
 import Trajectory from './Trajectory';
 import EndGame from './EndGame';
+import S from '../styles/main.module.css'
 
 type P = I.PropsStateMain & I.PropsDispaich;
 
@@ -14,17 +15,19 @@ function Main_i(props:P) {
     switch(props.page) {
         case 'start' :
             return (
-                <MainMenu/>
+                <div className={S.main}>
+                    <MainMenu />
+                </div>
             );
             break;
         case 'game' :
             return (
-                <>
+                <div className={S.main}>
                     <Header/>
                     <Labirint/>
                     <Trajectory/>
                     <EndGame opened={props.endGame} win={props.win} />
-                </>
+                </div>
             );
             break;
         default: return(<></>)        
