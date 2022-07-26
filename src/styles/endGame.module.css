@@ -1,0 +1,13 @@
+.block {
+    width: 300px;
+    text-align: center;
+    margin: 20px 0;
+    font-size: large;
+    color: #433466;   
+    opacity: 0;
+    animation: opacity 0.5s forwards; 
+}
+@keyframes opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

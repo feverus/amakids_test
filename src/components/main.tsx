@@ -25,8 +25,10 @@ function Main_i(props:P) {
                 <div className={S.main}>
                     <Header/>
                     <Labirint/>
-                    <Trajectory/>
-                    <EndGame opened={props.endGame} win={props.win} />
+                    {(props.endGame) ? 
+                        <EndGame win={props.win} /> :
+                        <Trajectory />
+                    }
                 </div>
             );
             break;
