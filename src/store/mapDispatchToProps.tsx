@@ -8,7 +8,7 @@ export function mapDispatchToProps() {
 			doStartGame: bindActionCreators(Set.startGame, dispatch),
 			generateNewGame: bindActionCreators(Labirint.generateNewGame, dispatch),
 			onCellClick: bindActionCreators(Set.onCellClick, dispatch),
-			
+			changeLabirint: bindActionCreators(Labirint.changeLabirint, dispatch),			
 		}
 	}
 }

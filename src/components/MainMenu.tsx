@@ -15,14 +15,14 @@ function MainMenu_i(props:P) {
         if (level === 'hard') {
             movesOnTrajectory = 20
             x = 10
-            y = 10
+            y = 6
         }
         if (level === 'simple') {
             movesOnTrajectory = 2
-            x = 2
-            y = 2
+            x = 3
+            y = 3
         }
-        let newGameData = generateTrajectory({movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: [r(x), r(y)]});
+        let newGameData = generateTrajectory({movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: [r(x)-1, r(y)-1]});
         props.doStartGame({page:'game', movesOnTrajectory: movesOnTrajectory, labirintSize: [x, y], labirintEnter: newGameData.labirintEnter, labirintExit: newGameData.labirintExit, gamesPlayed: 0, gamesWinned: 0});      
         props.generateNewGame({labirintMap:newGameData.labirintMap, trajectory:newGameData.trajectory}) 
     }

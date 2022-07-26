@@ -6,6 +6,9 @@ export default function r_labirint(state: I.StateLabirint = initialState.labirin
 		case "GENERATE_NEW_GAME": {
 			return {...action.payload}        
 		}
+		case "CHANGE_LABIRINT_CELL_VALUE": {
+			return {...state, labirintMap:action.payload.labirintMap}        
+		}
 		default: return state;
 	}
 }

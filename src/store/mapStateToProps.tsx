@@ -21,7 +21,12 @@ export function mapStateToPropsHeader() {
 export function mapStateToPropsLabirint() {
 	return function (state: I.StateAll):I.PropsStateLabirint {
 		return {
+			endGame: state.set.endGame,
 			labirintMap: state.labirint.labirintMap,
+			labirintEnter: state.set.labirintEnter,
+			labirintExit: state.set.labirintExit,
+			clickedCell: state.set.clickedCell,
+			trajectory: state.labirint.trajectory,
 		}
 	}
 }
@@ -29,6 +34,7 @@ export function mapStateToPropsLabirintCell() {
 	return function (state: I.StateAll):I.PropsStateLabirintCell {
 		return {
 			labirintExit: state.set.labirintExit,
+			endGame: state.set.endGame,
 		}
 	}
 }

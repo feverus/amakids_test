@@ -9,6 +9,7 @@ const initialState: I.StateAll = {
 		labirintSize: [1, 1],
 		labirintEnter: [1, 1],
 		labirintExit: [1, 1],
+		clickedCell: [1, 1],
 		gamesPlayed: 0,
 		gamesWinned: 0,
 	},

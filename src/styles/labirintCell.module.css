@@ -11,26 +11,71 @@
     background-size: cover;
     border: none;
     padding: 0;
+    border-radius: 10px;
+}
+button:disabled {
+    cursor: auto;
 }
 .hall {
     background-image: url('img/hall.jpg');    
 }
 
 
-.enter {  
+.enter, .exit, .fail {  
 }
-.enter::before {
+
+.left {}
+.right {}
+.up {}
+.down {}
+.left::before {
+    transform: rotate(180deg);
+}
+.right::before {
+
+}
+.up::before {
+    transform: rotate(-90deg);
+}
+.down::before {
+    transform: rotate(90deg);
+}
+.left::before, .right::before, .up::before, .down::before, .fail::before, .enter::before, .exit::before {
     display: inline-block;
     content: "";
-    background-image: url('img/door.jpg'); 
     position: relative;
     background-size: cover;
     width: 100px;
     height: 100px;  
     opacity: 0;
+    border: none;
+    padding: 0; 
+    color: white;
+    transition: all 0.2s easy 0s;
+    border-radius: 10px;
+}
+.fail::before {
+    background-image: url('img/fail.jpg');
+    animation: opacity 0.2s forwards;
+    transition: all 0.2s easy 0.2s;
+    box-shadow: 0 0 19px 3px #ff0000b8;
+}
+.enter::before {
+    background-image: url('img/door.jpg');
     animation: opacity 2s forwards;
 }
-
+.exit::before {
+    background-image: url('img/door.jpg');
+    animation: opacity 0.2s forwards;
+    transition: all 0.2s easy 0.2s;
+    box-shadow: 0 0 19px 3px #28bd23b8;
+}
+.left::before, .right::before, .up::before, .down::before {
+    background-image: url('img/arrow.png');
+    animation: opacity 0.2s forwards;
+    width: 50px;
+    height: 50px;  
+}
 
 @keyframes opacity {
     0% {opacity: 0;}

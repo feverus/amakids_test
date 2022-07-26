@@ -6,3 +6,9 @@ export function generateNewGame(value: I.StateSet):I.ActionSet {
 		payload: value
 	}
 }
+export function changeLabirint(value: I.StateLabirint):I.ActionLabirint {
+	return {
+		type: "CHANGE_LABIRINT_CELL_VALUE",
+		payload: value,
+	}
+}

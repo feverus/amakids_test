@@ -12,6 +12,7 @@ export interface StateSet {
 	labirintSize: Array<number>;
 	labirintEnter: Array<number>;
 	labirintExit: Array<number>;
+	clickedCell: Array<number>;
 	gamesPlayed: number;
 	gamesWinned: number;
 }
@@ -55,10 +56,16 @@ export interface PropsStateHeader {
 	gamesWinned: number;
 }
 export interface PropsStateLabirint {
+	endGame: boolean;
 	labirintMap: Array<Array<string>>;
+	labirintEnter: Array<number>;
+	labirintExit: Array<number>;
+	clickedCell: Array<number>;
+	trajectory: Array<string>;
 }
 export interface PropsStateLabirintCell {
 	labirintExit: Array<number>;
+	endGame: boolean;
 }
 export interface PropsStateTrajectory {
 	trajectory: Array<string>;
@@ -77,4 +84,5 @@ export interface PropsDispaich {
 	doStartGame: Function; 
 	generateNewGame: Function; 
 	onCellClick: Function; 
+	changeLabirint: Function; 
 }

@@ -7,16 +7,23 @@ type P = I.PropsStateLabirintCell &I.PropsDispaich & {cell:Array<number>, value:
 
 function LabirintCell_i(props:P) {
     const handleClick = () => {
-        console.log(props.cell);
-        console.log(props.labirintExit);
-        ((props.cell[0]===props.labirintExit[0]) && (props.cell[1]===props.labirintExit[1])) ? props.onCellClick({win:true}) : props.onCellClick({win:false});
+        ((props.cell[0]===props.labirintExit[0]) && (props.cell[1]===props.labirintExit[1])) ? props.onCellClick({win:true, clickedCell:props.cell}) : props.onCellClick({win:false, clickedCell:props.cell});
     }
     let buttonStyle = S.hall;
-    if (props.value==='enter') buttonStyle += ' ' + S.enter
+    switch(props.value) {
+        case 'enter': buttonStyle += ' ' + S.enter; break;
+        case 'exit': buttonStyle += ' ' + S.exit; break;
+        case 'fail': buttonStyle += ' ' + S.fail; break;
+        case 'up': buttonStyle += ' ' + S.up; break;
+        case 'down': buttonStyle += ' ' + S.down; break;
+        case 'left': buttonStyle += ' ' + S.left; break;
+        case 'right': buttonStyle += ' ' + S.right; break;
+    }
+    let disabled = false
+    if (props.endGame) disabled = true
     return (
         <div className={S.cell}>
-            <button className={buttonStyle} onClick={() => {handleClick()}} >{props.cell}
-            {props.value}
+            <button className={buttonStyle} onClick={() => {handleClick()}} disabled={disabled}>
             </button>
         </div>
     );

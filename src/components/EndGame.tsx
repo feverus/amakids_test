@@ -12,7 +12,7 @@ type P = I.PropsStateEndGame & I.PropsDispaich & {win:boolean};
 function EndGame_i(props:P) {
     const nextGame = () =>  {
         let size = props.labirintSize
-        let newGameData = generateTrajectory({movesOnTrajectory: props.movesOnTrajectory, labirintSize: size, labirintEnter: [r(size[0]), r(size[1])]});
+        let newGameData = generateTrajectory({movesOnTrajectory: props.movesOnTrajectory, labirintSize: size, labirintEnter: [r(size[0])-1, r(size[1])-1]});
         props.doStartGame({page:'game', movesOnTrajectory: props.movesOnTrajectory, labirintSize: size, labirintEnter: newGameData.labirintEnter, labirintExit: newGameData.labirintExit, gamesPlayed: props.gamesPlayed, gamesWinned: props.gamesWinned});      
         props.generateNewGame({labirintMap:newGameData.labirintMap, trajectory:newGameData.trajectory}) 
     }

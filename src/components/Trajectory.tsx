@@ -13,30 +13,28 @@ function Trajectory_i(props:P) {
     const [steps, setSteps] = useState<Array<string>>([])
 
     async function pushStep(step:string) {
-        console.log('pushStep ' +step)
         await timer(100); 
         let newSteps = steps.slice()
         newSteps.push(step) 
-        console.log(newSteps)
-        setSteps(newSteps);                 
+        setSteps(newSteps);               
     }
 
     useEffect(() => {
-      console.log('>')
       if (props.trajectory.length > steps.length) {
         pushStep(props.trajectory[steps.length])
       }
     }, [steps])
     useEffect(() => {
-      console.log('>>>')
       setSteps([]);
       if (props.trajectory.length > steps.length) {
         pushStep(props.trajectory[steps.length])
       }
     }, [props.trajectory])
 
+    let styleSteps = S.step300
+    if (props.trajectory.length > 10) styleSteps = S.step600
     return (
-        <div className={S.steps}>
+        <div className={styleSteps}>
         {steps.map((move, id) => <TrajectoryStep direction = {move} id={id} key={id} />)}
         </div>
     );

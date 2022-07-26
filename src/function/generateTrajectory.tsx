@@ -9,9 +9,9 @@ export default function generateTrajectory(props:P):R {
     //генерация карты лабиринта
     let row = []
     let labirintMap = []    
-    for (let i=1; i<=props.labirintSize[0]; i++) {
+    for (let x=1; x<=props.labirintSize[0]; x++) {
         row = [];
-        for (let j=1; j<=props.labirintSize[1]; j++) {
+        for (let y=1; y<=props.labirintSize[1]; y++) {
             row.push('')
         }
         labirintMap.push(row)
@@ -29,10 +29,10 @@ export default function generateTrajectory(props:P):R {
     for (let i=1; i<=props.movesOnTrajectory; i++) {
         //убираем возможность двигаться из углов
         availableMoves = allMoves.slice();
-        if (endCell[0]===1) {availableMoves = availableMoves.filter((el) => (el!=='left'))}
-        if (endCell[0]===props.labirintSize[0]) {availableMoves = availableMoves.filter((el) => (el!=='right'))}
-        if (endCell[1]===1) {availableMoves = availableMoves.filter((el) => (el!=='up'))}
-        if (endCell[1]===props.labirintSize[1]) {availableMoves = availableMoves.filter((el) => (el!=='down'))}
+        if (endCell[0]===0) {availableMoves = availableMoves.filter((el) => (el!=='left'))}
+        if (endCell[0]===props.labirintSize[0]-1) {availableMoves = availableMoves.filter((el) => (el!=='right'))}
+        if (endCell[1]===0) {availableMoves = availableMoves.filter((el) => (el!=='up'))}
+        if (endCell[1]===props.labirintSize[1]-1) {availableMoves = availableMoves.filter((el) => (el!=='down'))}
         rMove = r(availableMoves.length) - 1        
         trajectory.push(availableMoves[rMove])
         switch(trajectory[trajectory.length - 1]) {
@@ -47,6 +47,6 @@ export default function generateTrajectory(props:P):R {
             default: break;
         }
     }
-    labirintMap[endCell[0]-1][endCell[1]-1] = 'enter'
+    labirintMap[props.labirintEnter[0]][props.labirintEnter[1]] = 'enter'
     return {labirintMap: labirintMap, trajectory: trajectory, labirintEnter: props.labirintEnter, labirintExit: endCell}
 }
